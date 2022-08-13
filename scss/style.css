@@ -1,0 +1,57 @@
+:root[color-theme=dark] {
+  --background-color: #212121;
+  --text-color: #fafafa;
+  --gray-color: gray;
+}
+
+:root[color-theme=light] {
+  --background-color: #fafafa
+  --text-color : #000;
+  --gray-color: gray;
+}
+
+* {
+  font-family: "Noto Sans KR", sans-serif;
+  list-style: none;
+  outline: none;
+}
+
+a {
+  color: var(--gray-color);
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background-color);
+}
+
+header {
+  padding: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10rem;
+}
+header p {
+  background-image: url(../images/moreeplogo1.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-indent: -9999em;
+  width: 141px;
+  height: 38px;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 5rem;
+}
+.nav-bar li > a {
+  outline: none;
+}
+.nav-bar li > a:hover {
+  color: #fafafa;
+}
+.nav-bar li > a.active {
+  color: #fafafa;
+}/*# sourceMappingURL=style.css.map */
+

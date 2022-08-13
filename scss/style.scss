@@ -1,0 +1,220 @@
+:root[color-theme="dark"] {
+  --background-color: #000;
+  --text-color : #fff;
+  --gray-color : gray;
+}
+
+:root[color-theme="light"] {
+  --background-color: beige
+  --text-color : #000;
+  --gray-color : gray;
+}
+
+* {
+  font-family: 'Noto Sans KR', sans-serif;
+  list-style: none;
+  outline: none;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--background-color);
+  overflow-x: hidden;
+  height: 2000px;
+  width: 100%;
+}
+
+
+header {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #000;
+  z-index: 1;
+  transform: translateY(-100%);
+  transition: .2s ease-in;
+
+  p {
+    background-image: url(../images/moreeplogo.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-indent: -9999em;
+    width: 160px;
+    height: 38px;
+  }
+
+  span {
+    color: #fff;
+    font-size:16px;
+    font-weight: bold;
+    border: 1px solid #fff;
+    padding: 7px 15px;
+    border-radius: 10px;
+  }
+}
+
+header.active {
+  transform: translateY(0);
+}
+
+.content {
+  max-width: 1080px;
+  margin: 90px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  opacity: 0;
+  font-weight: bold;
+
+  span:first-of-type {
+    font-size: 64px;
+    display: flex;
+    gap: 20px
+  }
+
+  span:nth-of-type(2) {
+    font-size: 17px;
+    color: var(--gray-color);
+  }
+
+  span:nth-of-type(3) {
+    margin: 2rem 0;
+    font-size: 24px;
+    background-color: goldenrod;
+    padding: 15px 50px;
+    border-radius: 10px;
+  }
+}
+
+.content.active{
+  animation: display 2s .5s both;
+}
+
+.content span > span {
+  position: relative;
+}
+
+.content span > span:before {
+  content: '몰입';
+  position: absolute;
+  top: 0;
+  left: 0;
+  color: goldenrod;
+  transition: .2s ease-in;
+  width: 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.content:hover span > span:before {
+  width: 100%;
+}
+
+@keyframes display{
+  0% { opacity:0; transform: translateY(10%);}
+  100% { opacity:1; transform: translateY(0);}
+}
+
+.slide-container {
+  padding: 20px;
+}
+
+.slide-wrapper {
+  display: flex;
+  margin: 0 auto;
+  gap: 20px;
+
+  img {
+    border-radius: 20px;
+    height: 200px;
+    background-color: bisque;
+  }
+}
+
+@keyframes moveFirstSlide {
+  0% { transform: translateX(0%);}
+  100% { transform:translateX(-8%)}
+}
+
+.slide-wrapper.first {
+  animation: moveFirstSlide 10s linear infinite alternate;
+}
+
+.slide-wrapper:last-child {
+  margin-top: 20px;
+}
+
+.slide-wrapper.second {
+  transform: translateX(-12%);
+  animation: moveSecondSlide 10s linear infinite alternate;
+}
+
+@keyframes moveSecondSlide {
+  0% { transform: translateX(-12%);}
+  100% { transform:translateX(0%)}
+}
+
+.content2 {
+  width: 100%;
+  height: 1000px;
+  background-color: #fff;
+  position: relative;
+}
+
+.content2:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  left: 0%;
+  bottom: 100%;
+  background-color: #fff;
+  z-index: -1;
+}
+
+.content2-wrapper {
+  max-width: 1080px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  > span {
+    color: #000;
+    font-size: 46px;
+    font-weight: bold;
+  }
+
+  > span:first-child {
+    margin-top: 100px;
+  }
+
+  .desk-wrapper{
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    span {
+      width: 500px;
+      height: 300px;
+      background-color: gray;
+      display: block;
+      border-radius: 20px;
+      flex: 1 1 auto;
+    }
+  }
+}
