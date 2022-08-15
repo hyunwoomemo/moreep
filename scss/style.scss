@@ -27,6 +27,7 @@ body {
   overflow-x: hidden;
   height: 2000px;
   width: 100%;
+  margin: 0;
 }
 
 
@@ -34,7 +35,7 @@ header {
   max-width: 1080px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
+  padding: 20px;
   align-items: center;
   gap: 10rem;
   display: flex;
@@ -216,5 +217,68 @@ header.active {
       border-radius: 20px;
       flex: 1 1 auto;
     }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .content {
+    span:first-of-type {
+      font-size: 32px;
+    }
+
+    span:nth-of-type(2) {
+      font-size: 12px;
+    }
+  }
+
+  .slide-wrapper.first {
+    animation: moveFirstSlide 50s linear infinite alternate;
+  }
+
+  .slide-wrapper.second {
+    animation: moveSecondSlide 50s linear infinite alternate;
+  }
+
+  @keyframes moveFirstSlide {
+    0% {transform: translateX(0%);}
+    100%{transform: translateX(-175%);}
+  }
+
+  @keyframes moveSecondSlide {
+    0% {transform: translateX(-180%);}
+    100%{transform: translateX(0%);}
+  }
+}
+
+@media screen and (max-width: 500px) {
+  header span {
+    font-size: 12px;
+    white-space: nowrap;
+  }
+
+  header {
+    p {
+      width: 125px;
+      height: 30px;
+    }
+  }
+
+  .content {
+    margin: 40px;
+
+    span:first-of-type {
+      font-size: 20px;
+      white-space: nowrap;
+    }
+
+    span:nth-of-type(2) {
+      font-size: 8px;
+    }
+  }
+
+  .content > span:last-of-type {
+    margin: 1rem 0;
+    font-size: 16px;
+    padding: 10px 30px;
   }
 }
