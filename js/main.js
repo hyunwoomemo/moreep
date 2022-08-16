@@ -8,5 +8,7 @@ window.addEventListener('load', function(){
 let scrollValue = document.documentElement.scroll;
 
 document.addEventListener('scroll', function(){
-  scrollY > 420 ? header.classList.remove('active') : header.classList.add('active');
+  scrollY > 5 ? header.classList.remove('active') : header.classList.add('active');
+  const nav = document.querySelector('.nav');
+  scrollY > 5 ? nav.classList.add('active') : nav.classList.remove('active');
 })

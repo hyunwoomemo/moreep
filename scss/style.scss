@@ -17,6 +17,11 @@
   color: var(--text-color);
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
 a {
   color: var(--text-color);
   text-decoration: none;
@@ -69,6 +74,54 @@ header.active {
   transform: translateY(0);
 }
 
+.nav {
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: #000;
+  padding: 0 50px;
+  transition: .3s all ease-in;
+
+  a {
+    font-size: 20px;
+    color: gray;
+    flex: 1 1 auto;
+    padding: 15px;
+  }
+
+  ul {
+    display: flex;
+    gap: 25px;
+  }
+
+  #desk {
+    cursor: pointer;
+    position: relative;
+  }
+
+  #desk:before {
+    content:'좌석 종류';
+    position: absolute;
+    width: 0;
+    top: 0;
+    left: 0;
+    color: goldenrod;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: .3s all ease-in;
+  }
+
+  #desk:hover:before {
+    width: 100%;
+  }
+}
+
+.nav.active {
+  background-color: #090909;
+}
+
 .content {
   max-width: 1080px;
   margin: 90px auto;
@@ -115,7 +168,7 @@ header.active {
   color: goldenrod;
   transition: .2s ease-in;
   width: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   white-space: nowrap;
 }
 
@@ -130,7 +183,7 @@ header.active {
 
 .slide-container {
   padding: 20px;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .slide-wrapper {
@@ -187,12 +240,10 @@ header.active {
 }
 
 .content2-wrapper {
-  max-width: 1080px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  overflow: hidden;
-  padding-bottom: 80px;
+  padding-bottom: 20px;
 
   > span {
     color: #000;
@@ -205,8 +256,13 @@ header.active {
     margin-top: 100px;
   }
 
+  > p {
+    color: #fff;
+  }
+
   .desk-wrapper{
     margin-top: 100px;
+    margin: 0 auto;
     display: flex;
     gap: 2vw;
     padding: 2vw;
@@ -236,7 +292,7 @@ header.active {
     }
 
     img.active {
-      z-index: 999;
+      z-index: 998;
     }
   }
 
@@ -265,6 +321,16 @@ header.active {
 }
 
 @media screen and (max-width: 800px) {
+  .nav { 
+    justify-content: end;
+    padding: 15px 30px;
+    font-size: 14px;
+  }
+
+  .nav > h1 {
+    display: none;
+  }
+
   .content {
     span:first-of-type {
       font-size: 32px;
@@ -331,6 +397,10 @@ header.active {
 }
 
 @media screen and (max-width: 500px) {
+
+  .nav {
+    font-size: 10px;
+  }
 
   @keyframes moveFirstSlide {
     0% {transform: translateX(0%);}
