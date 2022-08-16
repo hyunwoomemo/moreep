@@ -288,6 +288,8 @@ header.active {
   }
   .content2-wrapper .desk-wrapper {
     margin-top: 30px;
+    max-width: 140px;
+    width: 50%;
   }
   .content2-wrapper .desk-wrapper img:hover {
     transform: none;
