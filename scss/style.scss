@@ -191,6 +191,8 @@ header.active {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 80px;
 
   > span {
     color: #000;
@@ -298,8 +300,6 @@ header.active {
   .content2-wrapper {
     .desk-wrapper {
       margin-top: 30px;
-      max-width: 140px;
-      width: 50%;
 
       img:hover {
         transform: none;

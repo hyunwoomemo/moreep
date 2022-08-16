@@ -196,6 +196,8 @@ header.active {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  padding-bottom: 80px;
 }
 .content2-wrapper > span {
   color: #000;
@@ -288,8 +290,6 @@ header.active {
   }
   .content2-wrapper .desk-wrapper {
     margin-top: 30px;
-    max-width: 140px;
-    width: 50%;
   }
   .content2-wrapper .desk-wrapper img:hover {
     transform: none;
