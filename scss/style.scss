@@ -208,13 +208,13 @@ header.active {
   .desk-wrapper{
     margin-top: 100px;
     display: flex;
-    justify-content: center;
-    gap: 30px;
-    padding: 15px;
+    gap: 2vw;
+    padding: 2vw;
+
 
     img {
-      max-width: 140px;
-      width: 50%;
+      max-width: 200px;
+      width: 17.6vw;
       border-radius: 20px;
       transition: .2s ease-in;
     }
