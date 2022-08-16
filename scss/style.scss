@@ -171,9 +171,9 @@ header.active {
 
 .content2 {
   width: 100%;
-  height: 1000px;
   background-color: #fff;
   position: relative;
+  padding-bottom: 100px;
 }
 
 .content2:after {
@@ -195,8 +195,9 @@ header.active {
 
   > span {
     color: #000;
-    font-size: 46px;
+    font-size: 42px;
     font-weight: bold;
+    padding: 20px;
   }
 
   > span:first-child {
@@ -206,18 +207,60 @@ header.active {
   .desk-wrapper{
     margin-top: 100px;
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
     gap: 30px;
+    padding: 15px;
 
-    span {
-      width: 500px;
-      height: 300px;
-      background-color: gray;
-      display: block;
+    img {
+      max-width: 140px;
+      width: 50%;
       border-radius: 20px;
-      flex: 1 1 auto;
+      transition: .2s ease-in;
+    }
+
+    img:hover {
+      transform: scale(2.0);
+    }
+
+    img:first-of-type:hover {
+      transform: scale(2.0) translateX(20%);
+    }
+    
+    img:last-of-type:hover {
+      transform: scale(2.0) translateX(-20%);
+    }
+
+    img.gray {
+      filter: grayscale(0.9);
+    }
+
+    img.active {
+      z-index: 999;
     }
   }
+
+}
+
+.cafe-info {
+  background-color: goldenrod;
+  width: 100%;
+  padding: 100px 0;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+
+  span {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    >p {
+      color: #fff;
+    }
+  }
+
 }
 
 @media screen and (max-width: 800px) {
@@ -248,6 +291,38 @@ header.active {
     0% {transform: translateX(-180%);}
     100%{transform: translateX(0%);}
   }
+
+  .content2-wrapper {
+    .desk-wrapper {
+      margin-top: 30px;
+
+      img:hover {
+        transform: none;
+      }
+
+      img:first-of-type:hover {
+        transform: none;
+      }
+
+      img:last-of-type:hover {
+        transform: none;
+      }
+    }
+  }
+
+  .content2-wrapper > span {
+    font-size: 28px;
+    padding: 10px;
+  }
+
+  .cafe-info svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .cafe-info span > p {
+    font-size: 10px;
+  }
 }
 
 @media screen and (max-width: 500px) {
@@ -267,13 +342,14 @@ header.active {
     margin: 40px;
 
     span:first-of-type {
-      font-size: 20px;
+      font-size: 26px;
       white-space: nowrap;
     }
 
     span:nth-of-type(2) {
-      font-size: 7px;
-      white-space: nowrap;
+      font-size: 12px;
+      white-space: wrap;
+      line-height: 20px;
     }
   }
 
@@ -281,5 +357,24 @@ header.active {
     margin: 1rem 0;
     font-size: 16px;
     padding: 10px 30px;
+  }
+
+  .content2-wrapper > span {
+    font-size: 18px;
+    padding: 5px;
+    padding-left: 20px;
+  }
+
+  .content2-wrapper > span:first-child {
+    margin-top: 50px;
+  }
+
+  .cafe-info svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .cafe-info span > p {
+    font-size: 8px;
   }
 }
