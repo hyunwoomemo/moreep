@@ -24,7 +24,6 @@ a {
 
 body {
   background-color: var(--background-color);
-  overflow-x: hidden;
   height: 2000px;
   width: 100%;
   margin: 0;
@@ -132,6 +131,7 @@ header.active {
 
 .slide-container {
   padding: 20px;
+  overflow: hidden;
 }
 
 .slide-wrapper {
@@ -244,7 +244,7 @@ header.active {
 .cafe-info {
   background-color: goldenrod;
   width: 100%;
-  padding: 100px 0;
+  padding: 5% 0;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -274,21 +274,25 @@ header.active {
     }
   }
 
+  .slide-wrapper img {
+    height: 150px;
+  }
+
   .slide-wrapper.first {
-    animation: moveFirstSlide 50s linear infinite alternate;
+    animation: moveFirstSlide 10s linear infinite alternate;
   }
 
   .slide-wrapper.second {
-    animation: moveSecondSlide 50s linear infinite alternate;
+    animation: moveSecondSlide 10s linear infinite alternate;
   }
 
   @keyframes moveFirstSlide {
     0% {transform: translateX(0%);}
-    100%{transform: translateX(-175%);}
+    100%{transform: translateX(-105%);}
   }
 
   @keyframes moveSecondSlide {
-    0% {transform: translateX(-180%);}
+    0% {transform: translateX(-107%);}
     100%{transform: translateX(0%);}
   }
 
@@ -326,6 +330,17 @@ header.active {
 }
 
 @media screen and (max-width: 500px) {
+
+  @keyframes moveFirstSlide {
+    0% {transform: translateX(0%);}
+    100%{transform: translateX(-135%);}
+  }
+
+  @keyframes moveSecondSlide {
+    0% {transform: translateX(-140%);}
+    100%{transform: translateX(0%);}
+  }
+
   header span {
     font-size: 12px;
     white-space: nowrap;
@@ -357,6 +372,10 @@ header.active {
     margin: 1rem 0;
     font-size: 16px;
     padding: 10px 30px;
+  }
+
+  .slide-wrapper img {
+    height: 100px;
   }
 
   .content2-wrapper > span {
