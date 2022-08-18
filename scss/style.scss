@@ -33,9 +33,9 @@ a {
 
 body {
   background-color: var(--background-color);
-  height: 2000px;
   width: 100%;
   margin: 0;
+  overflow-x: hidden;
 }
 
 
@@ -101,29 +101,77 @@ header.active {
 }
 
 .nav {
-  opacity: 0;
-  align-items: center;
   position: sticky;
+  width: 100%;
+  overflow: hidden;
+  height: 60px;
   top: 0;
   z-index: 999;
-  background-color: #000;
-  padding: 10px 50px;
-  transition: .3s all ease-in;
-  display: flex;
+  opacity: 0;
+  transition: .1s all linear;
 
-  a {
-    font-size: 20px;
-    color: gray;
+  .nav-slide-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    transition: .3s all linear;
+    height: 100%;
+
+    .titleWrapper {
+      display: flex;
+      width: 100%;
+      background-color: #090909;
+      position: absolute;
+      left: 0%;
+      align-items: center;
+
+      a {
+        padding: 10px 20px;
+        color: gray;
+        font-weight: bold;
+      }
+    }
+
+    .tagWrapper {
+      display: flex;
+      width: 100%;
+      background-color: #fff;
+      position: absolute;
+      left: 100%;
+      align-items: center;
+      padding: 10px 20px;
+      gap: 20px;
+
+      span {
+        opacity: 0;
+        transition: 1s all linear;
+        padding: 5px 10px;
+      }
+
+      span:first-of-type { 
+        background-color: yellowgreen;
+        color: #fff;
+        border-radius: 15px;
+      }
+    }
+  }
+
+  .nav-slide-wrapper.tag1 {
+    transform: translateX(-100%);
+
+    span {
+      opacity: 1;
+      color: #000;
+    }
   }
 }
 
 .nav.active {
-  background-color: #090909;
   opacity: 1;
-}
-
-.nav.active.change {
-  background-color: #fff;
 }
 
 .content {
@@ -222,36 +270,6 @@ header.active {
 @keyframes moveSecondSlide {
   0% { transform: translateX(-18%);}
   100% { transform:translateX(0%)}
-}
-
-.tagWrapper {
-  z-index: 999;
-  position: sticky;
-  top: 0;
-  padding: 10px;
-  transition: .1s all ease-in;
-  flex: 1 1 auto;
-  opacity: 0;
-  background-color: #fff;
-
-  > span {
-    color: #fff;
-    background-color: lightgray;
-    padding: 5px 10px;
-    border-radius: 150px;
-    font-size: 12px;
-    font-weight: bold;
-    transition: .1s all ease-in;
-  }
-
-  > span:first-of-type {
-    background-color: skyblue;
-  }
-}
-
-.tagWrapper.active {
-  opacity: 1;
-
 }
 
 .content2 {
