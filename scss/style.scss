@@ -17,6 +17,10 @@
   color: var(--text-color);
 }
 
+.hidden {
+  display: none;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -118,6 +122,10 @@ header.active {
   opacity: 1;
 }
 
+.nav.active.change {
+  background-color: #fff;
+}
+
 .content {
   max-width: 1080px;
   margin: 90px auto;
@@ -217,14 +225,14 @@ header.active {
 }
 
 .tagWrapper {
-  max-width: 1080px;
-  margin: 0 auto;
   z-index: 999;
   position: sticky;
-  top: 100px;
+  top: 0;
   padding: 10px;
-  transition: .3s all ease-in;
+  transition: .1s all ease-in;
   flex: 1 1 auto;
+  opacity: 0;
+  background-color: #fff;
 
   > span {
     color: #fff;
@@ -233,17 +241,17 @@ header.active {
     border-radius: 150px;
     font-size: 12px;
     font-weight: bold;
-    opacity: 0;
-    transition: .3s all ease-in;
-  }
-
-  span.active {
-    opacity: 1;
+    transition: .1s all ease-in;
   }
 
   > span:first-of-type {
     background-color: skyblue;
   }
+}
+
+.tagWrapper.active {
+  opacity: 1;
+
 }
 
 .content2 {
