@@ -6,6 +6,8 @@ const content2Wrapper = document.querySelector('.content2-wrapper');
 const content2WrapperStart = content2Wrapper.getBoundingClientRect().top;
 const nav = document.querySelector('.nav');
 const navSlideWrapper = document.querySelector('.nav-slide-wrapper');
+const slideContainer = document.querySelector('.slide-container');
+const slideContainerEnd = slideContainer.getBoundingClientRect().bottom;
 
 console.log(content2WrapperStart);
 
@@ -14,7 +16,7 @@ window.addEventListener('load', function(){
 })
 
 document.addEventListener('scroll', function(){
-  if ( scrollY > 500 ) {
+  if ( scrollY > 300 ) {
     header.classList.remove('active');
     nav.classList.add('active');
   } else {
@@ -22,9 +24,9 @@ document.addEventListener('scroll', function(){
     nav.classList.remove('active');
   }
 
-  if ( scrollY > content2WrapperStart) {
+  if ( scrollY > content2WrapperStart - tagWrapper.offsetHeight) {
     navSlideWrapper.classList.add('tag1');
-  } else if ( scrollY < content2WrapperStart) {
+  } else if ( scrollY < content2WrapperStart - tagWrapper.offsetHeight ) {
     navSlideWrapper.classList.remove('tag1');
   }
 })
