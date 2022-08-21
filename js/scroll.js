@@ -11,9 +11,6 @@ const slideContainer = document.querySelector('.slide-container');
 const slideContainerEnd = slideContainer.getBoundingClientRect().bottom;
 const cafeInfoWrapper = document.querySelector('.cafe-info');
 const cafeInFoEnd = cafeInfoWrapper.getBoundingClientRect().bottom;
-const cleanWrapper = document.querySelector('.clean-wrapper');
-const cleanStart = cleanWrapper.getBoundingClientRect().top;
-const cleanEnd = cleanWrapper.getBoundingClientRect().bottom;
 const deskStart = deskWrapper.getBoundingClientRect().top;
 
 window.addEventListener('load', function(){
